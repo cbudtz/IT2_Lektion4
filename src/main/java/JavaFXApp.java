@@ -1,10 +1,12 @@
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 
 public class JavaFXApp extends Application {
 
@@ -13,15 +15,11 @@ public class JavaFXApp extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        Label l = new Label("Hello, JavaFX!");
-        Label l2 = new Label("Its a fine day!");
-        FlowPane flowPane = new FlowPane(Orientation.VERTICAL);
-        flowPane.getChildren().add(l);
-        flowPane.getChildren().add(l2);
-        Scene scene = new Scene(flowPane,640,480);
+    public void start(Stage primaryStage) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui.fxml"));
+        FlowPane flowPane = loader.load();
+        Scene scene = new Scene(flowPane);
         primaryStage.setScene(scene);
         primaryStage.show();
-
     }
 }
