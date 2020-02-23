@@ -9,7 +9,9 @@
 <FlowPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             prefHeight="400.0" prefWidth="600.0"
+            fx:controller="GuiController"
             orientation="VERTICAL">
     <Label>Hej JavaFX!</Label>
-    <Label>Det er en fin dag!</Label>
+    <Label fx:id="label2">Det er en fin dag!</Label>
+    <Button onMouseClicked="#buttonPressed">Tryk på mig!</Button>
 </FlowPane>
